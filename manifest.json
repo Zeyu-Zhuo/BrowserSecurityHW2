@@ -11,9 +11,13 @@
   "web_accessible_resources": [
     "popup.js", "content.js","*.png"
     ],
-
+    
   "content_scripts": [{
     "js": ["jquery-3.4.1.min.js","content.js"],
     "matches": ["https://developer.chrome.com/extensions/*"]
-  }]
+  }],
+  "permissions": [
+      "tabs",
+      "https://developer.chrome.com/extensions/*"
+  ]
 }
