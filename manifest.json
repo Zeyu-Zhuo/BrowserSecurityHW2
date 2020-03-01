@@ -10,11 +10,12 @@
 
   "background":
   {
-      "scripts":["background.js"],
+      "scripts":["jquery-3.4.1.min.js","background.js"],
       "persistent": false
   },
   "permissions": [
     "alarms",
-    "geolocation"
+    "geolocation",
+    "http://www.yourwebsite.com/"
   ]
 }
