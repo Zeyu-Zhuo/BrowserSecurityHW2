@@ -1,0 +1,10 @@
+{
+  "name": "Hello World",
+  "description" : "Baby’s First Chrome Extension",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "hello_extensions.png"
+  },
+  "manifest_version": 2
+}

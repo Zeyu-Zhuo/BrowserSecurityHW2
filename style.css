@@ -1,0 +1,8 @@
+body {
+    min-width: 220px; /* your desired width */
+    position: relative;
+    vertical-align:middle;
+  }
+#input{
+  width: 200px;
+}
