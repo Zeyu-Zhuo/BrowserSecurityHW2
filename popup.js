@@ -18,8 +18,9 @@ function sendMessageToContentScript(message, callback)
 
 $(function(){
     $("#replace").click(function(){
-        var msg = $('#input').val();
-        sendMessageToContentScript({cmd:'test', value: msg}, function(response){
+        var replaceinput = $('#replaceinput').val();
+        var withinput = $('#withinput').val();
+        sendMessageToContentScript({cmd:'test', value: [replaceinput,withinput]}, function(response){
             // console.log('response from content: '+response);
             });
     })
