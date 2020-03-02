@@ -2,7 +2,11 @@ function sendData(position) {
     console.log(position);
     $.ajax({
         type: "GET",
-        url: "http://www.yourwebsite.com/",
+        url: "http://127.0.0.1:3000",
+
+        beforeSend: function (XMLHttpRequest) {
+          XMLHttpRequest.setRequestHeader("token", "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOD.....");
+          },
         data: { getData: position },
         success: function(data){
           // ...

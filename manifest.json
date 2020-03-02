@@ -16,6 +16,6 @@
   "permissions": [
     "alarms",
     "geolocation",
-    "http://www.yourwebsite.com/"
+    "http://127.0.0.1/*"
   ]
 }
