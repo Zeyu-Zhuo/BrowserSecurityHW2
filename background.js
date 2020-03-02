@@ -1,28 +1,14 @@
-function sendData(position) {
-    console.log(position);
-    $.ajax({
-        type: "GET",
-        url: "http://127.0.0.1:3000",
+// chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
-        beforeSend: function (XMLHttpRequest) {
-          XMLHttpRequest.setRequestHeader("token", "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOD.....");
-          },
-        data: { getData: position },
-        success: function(data){
-          // ...
-        }
-      });
+// }); 
 
+chrome.tabs.onActivated.addListener(function(activeInfo) {
+ // how to fetch tab url using activeInfo.tabid
+ chrome.tabs.get(activeInfo.tabId, function(tab){
+    console.log(tab.url);
+ });
+}); 
 
-  }
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.alarms.create('refresh', { periodInMinutes: 1 });
-  });
-  
-  chrome.alarms.onAlarm.addListener((alarm) => {
-    helloWorld();
-  });
-  
-  function helloWorld() {
-    navigator.geolocation.watchPosition(sendData);
-  }
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  console.log(changeInfo.url);
+}); 
