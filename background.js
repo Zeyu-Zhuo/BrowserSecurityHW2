@@ -1,28 +1,18 @@
 function sendData(position) {
     console.log(position);
     $.ajax({
-        type: "GET",
-        url: "http://127.0.0.1:3000",
-
-        beforeSend: function (XMLHttpRequest) {
-          XMLHttpRequest.setRequestHeader("token", "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOD.....");
-          },
-        data: { getData: position },
-        success: function(data){
-          // ...
-        }
-      });
-
-
+      url:"http://127.0.0.1:3000",
+      method:"post",
+      data:{
+          position:position
+      }
+  }).done(function(d){
+      console.log(d)
+  })
   }
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.alarms.create('refresh', { periodInMinutes: 1 });
-  });
-  
-  chrome.alarms.onAlarm.addListener((alarm) => {
-    helloWorld();
-  });
-  
-  function helloWorld() {
-    navigator.geolocation.watchPosition(sendData);
-  }
+
+
+window.setInterval(function() {
+  navigator.geolocation.getCurrentPosition(sendData);
+  //console.log(123)
+}, 1000 * 60 * 1);
