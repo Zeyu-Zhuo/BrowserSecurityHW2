@@ -9,33 +9,11 @@ function sendMessageToContentScript(message, callback)
     });
 }
 
-// $(function(){
-//     $('#input').keyup(function(){
-//         $('#hello').text('hello ' + $('#input').val() + '!');
-//     })
-// })
-
-
 $(function(){
     $("#replace").click(function(){
         var replaceinput = $('#replaceinput').val();
         var withinput = $('#withinput').val();
         sendMessageToContentScript({cmd:'test', value: [replaceinput,withinput]}, function(response){
-            // console.log('response from content: '+response);
             });
     })
 })
-
-
-
-// $("#replace").click(function(){
-//     var msg = $('#input').val();
-//     sendMessageToContentScript({cmd:'test', value: '123'}, function(response){
-//     // console.log('response from content: '+response);
-//     });
-// })
-
-// sendMessageToContentScript({cmd:'test', value: '123'}, function(response)
-// {
-//     // console.log('response from content: '+response);
-// });
