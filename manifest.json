@@ -14,9 +14,13 @@
       "persistent": false
   },
   "permissions": [
-    "alarms",
-    "geolocation",
     "tabs",
-    "http://127.0.0.1/*"
+    "background",
+    "tabs",
+    "https://www.google.com/_/chrome/newtab*",
+    "file://*/*",
+    "https://*/*",
+    "http://*/*"
+
   ]
 }
