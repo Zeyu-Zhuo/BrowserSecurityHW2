@@ -14,7 +14,7 @@ var app = express();
 app.get("/",function(req,res){
     //console.log(JSON.stringify(req));
     console.log(req.query)
-    res.sendFile('/home/578101568/BrowserSecurityHW2/test.html');
+    res.send();
 })
 
 app.listen(3000, () => console.log(`Example app listening on port ${3000}!`))
