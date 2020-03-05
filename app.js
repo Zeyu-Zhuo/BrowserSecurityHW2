@@ -18,5 +18,6 @@ app.post("/",function(req,res){
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 app.get("/file",function(req,res){
-    res.sendFile('/Users/zhuozeyu/CMU/BrowserSecurity/HW2/server/out');
+    var location = '/Users/zhuozeyu/CMU/BrowserSecurity/HW2/server/'
+    res.sendFile(location+'out');
 })
